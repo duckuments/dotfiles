@@ -2,10 +2,10 @@
   "extras": [
 
   ],
-  "install_version": 8,
+  "install_version": 15,
   "news": {
     "NEWS.md": "10960",
     "doc/news.txt": "25127"
   },
-  "version": 8
+  "version": 15
 }

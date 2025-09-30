@@ -12,6 +12,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	rocks = {
+		hererocks = false,
+	},
 	spec = {
 		-- add LazyVim and import its plugins
 		{
@@ -35,11 +38,6 @@ require("lazy").setup({
 			optional = true,
 		},
 
-		{
-			"nvim-telescope/telescope-fzf-native.nvim",
-			build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
-		},
-
 		{ import = "lazyvim.plugins.extras.formatting.prettier" },
 		{ import = "lazyvim.plugins.extras.lang.typescript" },
 		{ import = "lazyvim.plugins.extras.lang.json" },
@@ -48,7 +46,19 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.tailwind" },
 		-- { import = "lazyvim.plugins.extras.dap.core" },
 		-- { import = "lazyvim.plugins.extras.vscode" },
-		{ import = "lazyvim.plugins.extras.util.mini-hipatterns" },
+ 		{ import = "lazyvim.plugins.extras.util.mini-hipatterns" },
+		{
+			"mason-org/mason.nvim",
+			optional = true,
+		},
+		{
+			"nvim-mini/mini.bracketed",
+			optional = true,
+		},
+		{
+			"nvim-mini/mini.hipatterns",
+			optional = true,
+		},
 		-- { import = "lazyvim.plugins.extras.test.core" },
 		-- { import = "lazyvim.plugins.extras.coding.yanky" },
 		-- { import = "lazyvim.plugins.extras.editor.mini-files" },

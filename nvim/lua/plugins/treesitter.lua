@@ -3,6 +3,7 @@ return {
 
 	{
 		"nvim-treesitter/nvim-treesitter",
+		branch = "main",
 		build = function()
 			-- Alternative build method
 			local ok, _ = pcall(vim.cmd, "TSUpdate")
@@ -19,11 +20,9 @@ return {
 			-- Reduce the parser list to only essential ones initially
 			ensure_installed = {
 				"lua",
-				"vim", 
+				"vim",
 				"vimdoc",
 				"json",
-				-- Comment out jsonc temporarily
-				-- "jsonc",
 				"javascript",
 				"typescript",
 				"html",
@@ -35,7 +34,7 @@ return {
 			-- Disable auto installation temporarily
 			auto_install = false,
 			sync_install = false,
-			
+
 			-- Add ignore_install to skip problematic parsers
 			ignore_install = { "jsonc" },
 
@@ -98,8 +97,8 @@ return {
 			vim.treesitter.language.register("markdown", "mdx")
 
 			-- Add a command to retry problematic parsers later
-			vim.api.nvim_create_user_command('TSInstallJsonc', function()
-				vim.cmd('TSInstall jsonc')
+			vim.api.nvim_create_user_command("TSInstallJsonc", function()
+				vim.cmd("TSInstall jsonc")
 			end, {})
 		end,
 	},
