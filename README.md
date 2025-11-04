@@ -1,3 +1,8 @@
+
+![alt text](./img1.png)
+
+![alt text](./img2.png)
+
 # Dotfiles Configuration
 
 This repository contains my personal configuration files for various development tools.
