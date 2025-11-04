@@ -1,3 +1,7 @@
+local discipline = require("duckuments.discipline")
+
+discipline.cowboy()
+
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
@@ -75,17 +79,17 @@ keymap.set("n", "<C-j>", function()
 end, opts)
 
 keymap.set("n", "<leader>r", function()
-	require("craftzdog.hsl").replaceHexWithHSL()
+	require("duckuments.hsl").replaceHexWithHSL()
 end)
 
 keymap.set("n", "<leader>i", function()
-	require("craftzdog.lsp").toggleInlayHints()
+	require("duckuments.lsp").toggleInlayHints()
 end)
 
 vim.api.nvim_create_user_command("ToggleAutoformat", function()
-	require("craftzdog.lsp").toggleAutoformat()
+	require("duckuments.lsp").toggleAutoformat()
 end, {})
 
 vim.api.nvim_create_user_command("ToggleAutoformat", function()
-	require("craftzdog.lsp").toggleAutoformat()
+	require("duckuments.lsp").toggleAutoformat()
 end, {})
