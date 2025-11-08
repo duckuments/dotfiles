@@ -7,7 +7,7 @@
 
 This repository contains my personal configuration files for various development tools.
 
-Inspired by [craftzdog-dotfiles]([https://github.co](https://github.com/craftzdog/dotfiles-public))
+Inspired by [craftzdog-dotfiles](https://github.com/craftzdog/dotfiles-public)
 
 ## Neovim (nvim/)
 
