@@ -7,6 +7,8 @@
 
 This repository contains my personal configuration files for various development tools.
 
+Inspired by [craftzdog-dotfiles]([https://github.co](https://github.com/craftzdog/dotfiles-public))
+
 ## Neovim (nvim/)
 
 Neovim configuration using LazyVim framework. The main entry point is `init.lua`, which enables the loader, sets up debugging utilities, and loads the lazy configuration.
