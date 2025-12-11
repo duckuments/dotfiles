@@ -161,7 +161,7 @@ return {
 			opts.defaults = vim.tbl_deep_extend("force", opts.defaults, {
 				wrap_results = true,
 				layout_strategy = "horizontal",
-				layout_config = { prompt_position = "top" },
+				layout_config = { prompt_position = "bottom" },
 				sorting_strategy = "ascending",
 				winblend = 0,
 				mappings = {
