@@ -26,3 +26,8 @@ alias lg='lazygit'
 export ANTHROPIC_BASE_URL=https://agentrouter.org/
 export ANTHROPIC_AUTH_TOKEN=WD5JDousrATtT/svRJOFeafSwXLJe7Fg
 export ANTHROPIC_API_KEY=sk-JJQ30ATZhD5x2ARQdnRgbQ86QwbVFb44xt78F2PF2XuZpVjg
+
+# set proxy for shell 
+set -x http_proxy http://localhost:10808
+set -x https_proxy http://localhost:10808
+set -x all_proxy socks5://localhost:10808
