@@ -1,6 +1,7 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
-    # neofetch | lolcat
+    # neofetch | lolcct
+    # fastfetch | lolcat
     # set -U fish_greeting
 end
 
@@ -31,3 +32,12 @@ export ANTHROPIC_API_KEY=sk-JJQ30ATZhD5x2ARQdnRgbQ86QwbVFb44xt78F2PF2XuZpVjg
 set -x http_proxy http://localhost:10808
 set -x https_proxy http://localhost:10808
 set -x all_proxy socks5://localhost:10808
+
+# open file from fzf with neovim
+
+function fj
+    set file (fzf --preview='cat {}')
+    if test -n "$file"
+        nvim "$file"
+    end
+end
