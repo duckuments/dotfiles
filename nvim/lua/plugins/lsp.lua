@@ -24,11 +24,11 @@ return {
 			---@type lspconfig.options
 			servers = {
 				cssls = {},
-				-- tailwindcss = {
-				-- 	root_dir = function(...)
-				-- 		return require("lspconfig.util").root_pattern(".git")(...)
-				-- 	end,
-				-- },
+				tailwindcss = {
+					root_dir = function(...)
+						return require("lspconfig.util").root_pattern(".git")(...)
+					end,
+				},
 				tsserver = {
 					root_dir = function(...)
 						return require("lspconfig.util").root_pattern(".git")(...)
@@ -138,14 +138,19 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
-		opts = {
-			servers = {
-				["*"] = {
-					keys = {
-						{ "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", has = "definition" },
-					},
+		opts = function()
+			local keys = require("lazyvim.plugins.lsp.keymaps").get()
+			vim.list_extend(keys, {
+				{
+					"gd",
+					function()
+						-- DO NOT RESUSE WINDOW
+						require("telescope.builtin").lsp_definitions({ reuse_win = false })
+					end,
+					desc = "Goto Definition",
+					has = "definition",
 				},
-			},
-		},
+			})
+		end,
 	},
 }
