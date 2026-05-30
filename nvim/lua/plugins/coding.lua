@@ -1,15 +1,15 @@
 return {
-	-- incremental rename
+	-- Incremental rename
 	{
 		"smjonas/inc-rename.nvim",
-		cmd = "increname",
+		cmd = "IncRename",
 		config = true,
 	},
 
-	-- go forward/backward with square brackets
+	-- Go forward/backward with square brackets
 	{
 		"nvim-mini/mini.bracketed",
-		event = "bufreadpost",
+		event = "BufReadPost",
 		config = function()
 			local bracketed = require("mini.bracketed")
 			bracketed.setup({
@@ -22,13 +22,13 @@ return {
 		end,
 	},
 
-	-- better increase/descrease
+	-- Better increase/descrease
 	{
 		"monaqa/dial.nvim",
     -- stylua: ignore
     keys = {
-      { "<c-a>", function() return require("dial.map").inc_normal() end, expr = true, desc = "increment" },
-      { "<c-x>", function() return require("dial.map").dec_normal() end, expr = true, desc = "decrement" },
+      { "<C-a>", function() return require("dial.map").inc_normal() end, expr = true, desc = "Increment" },
+      { "<C-x>", function() return require("dial.map").dec_normal() end, expr = true, desc = "Decrement" },
     },
 		config = function()
 			local augend = require("dial.augend")
@@ -36,7 +36,7 @@ return {
 				default = {
 					augend.integer.alias.decimal,
 					augend.integer.alias.hex,
-					augend.date.alias["%y/%m/%d"],
+					augend.date.alias["%Y/%m/%d"],
 					augend.constant.alias.bool,
 					augend.semver.alias.semver,
 					augend.constant.new({ elements = { "let", "const" } }),
@@ -52,5 +52,18 @@ return {
 			suggestion = {
 				auto_trigger = true,
 				keymap = {
-					accept = "<c-l>",
-					accept_word = "<m-l>",
+					accept = "<C-l>",
+					accept_word = "<M-l>",
+					accept_line = "<M-S-l>",
+					next = "<M-]>",
+					prev = "<M-[>",
+					dismiss = "<C-]>",
+				},
+			},
+			filetypes = {
+				markdown = true,
+				help = true,
+			},
+		},
+	},
+}
