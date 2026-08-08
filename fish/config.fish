@@ -2,7 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
     # neofetch | lolcct
     # fastfetch | lolcat
-    # set -U fish_greeting
+    set -U fish_greeting
 end
 # Set up Homebrew environment
 set -gx HOMEBREW_PREFIX /home/linuxbrew/.linuxbrew
@@ -27,6 +27,8 @@ alias gl='git log'
 alias dev='pnpm dev'
 alias build='pnpm build'
 alias lint='pnpm lint'
+
+alias ll='eza -lah --icons --git --group-directories-first'
 
 # set proxy for shell 
 set -x http_proxy http://localhost:10808

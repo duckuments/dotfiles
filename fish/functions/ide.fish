@@ -1,0 +1,6 @@
+function ide
+    tmux select-pane -L
+    tmux split-window -v -l 20%
+    tmux split-window -h -l 66%
+    tmux split-window -h -l 50%
+end
