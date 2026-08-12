@@ -57,3 +57,16 @@ set -x VISUAL nvim
 # config Homebrew
 set -gx HOMEBREW_PREFIX /home/linuxbrew/.linuxbrew
 set -gx PATH $HOMEBREW_PREFIX/bin $HOMEBREW_PREFIX/sbin $PATH
+
+# config pyenv  -----------------------
+
+#  | sourcepyenv installation directory
+set -Ux PYENV_ROOT $HOME/.pyenv
+
+# Add pyenv to PATH
+if test -d $PYENV_ROOT/bin
+    fish_add_path $PYENV_ROOT/bin
+end
+
+# Initialize pyenv
+pyenv init - fish
