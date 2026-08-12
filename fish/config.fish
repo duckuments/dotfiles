@@ -69,4 +69,4 @@ if test -d $PYENV_ROOT/bin
 end
 
 # Initialize pyenv
-pyenv init - fish
+pyenv init - fish | source
