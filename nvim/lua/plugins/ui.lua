@@ -79,7 +79,8 @@ return {
 		opts = {
 			options = {
 				mode = "tabs",
-				-- separator_style = "slant",
+				separator_style = "slant",
+				indicator = { style = "underline" },
 				show_buffer_close_icons = false,
 				show_close_icon = false,
 			},
@@ -123,6 +124,9 @@ return {
 		"nvim-lualine/lualine.nvim",
 		opts = function(_, opts)
 			local LazyVim = require("lazyvim.util")
+			opts.options = opts.options or {}
+			opts.options.section_separators = { left = "", right = "" }
+			opts.options.component_separators = { left = "", right = "" }
 			opts.sections.lualine_c[4] = {
 				LazyVim.lualine.pretty_path({
 					length = 0,

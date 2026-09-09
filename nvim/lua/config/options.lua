@@ -13,6 +13,7 @@ vim.opt.backup = false
 vim.opt.showcmd = true
 vim.opt.cmdheight = 1
 vim.opt.laststatus = 3
+vim.o.winborder = "rounded" -- rounded borders on all floating windows (hover, diagnostics, pickers)
 vim.opt.expandtab = true
 vim.opt.scrolloff = 10
 vim.opt.shell = "fish"
