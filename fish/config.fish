@@ -27,6 +27,7 @@ alias gl='git log'
 alias dev='pnpm dev'
 alias build='pnpm build'
 alias lint='pnpm lint'
+alias pn='pnpm'
 
 alias ll='eza -lah --icons --git --group-directories-first'
 
@@ -68,5 +69,8 @@ if test -d $PYENV_ROOT/bin
     fish_add_path $PYENV_ROOT/bin
 end
 
-# Initialize pyenv
-pyenv init - fish | source
+# pyenv: put shims on PATH directly instead of `pyenv init - fish | source`,
+# which cost ~0.5s per shell start. Shims still honor .python-version and the
+# global version. Trade-off: the `pyenv shell` subcommand no longer works
+# (restore it by putting back the line above).
+fish_add_path $PYENV_ROOT/shims
