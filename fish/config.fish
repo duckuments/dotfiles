@@ -28,6 +28,7 @@ alias dev='pnpm dev'
 alias build='pnpm build'
 alias lint='pnpm lint'
 alias pn='pnpm'
+alias np='npm'
 
 alias ll='eza -lah --icons --git --group-directories-first'
 
@@ -74,3 +75,6 @@ end
 # global version. Trade-off: the `pyenv shell` subcommand no longer works
 # (restore it by putting back the line above).
 fish_add_path $PYENV_ROOT/shims
+
+# conda is no longer auto-initialized; run `init_conda` when you need it.
+# (see ~/.config/fish/functions/init_conda.fish)
