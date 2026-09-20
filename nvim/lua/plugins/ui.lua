@@ -76,15 +76,32 @@ return {
 			{ "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
 			{ "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
 		},
-		opts = {
-			options = {
+		opts = function(_, opts)
+			opts.options = vim.tbl_extend("force", opts.options or {}, {
 				mode = "tabs",
-				separator_style = "slant",
+				-- No "slant": on the transparent theme the slant glyphs render in
+				-- Normal.fg (light grey), showing as a light wedge between tabs.
+				separator_style = "thin",
 				indicator = { style = "underline" },
 				show_buffer_close_icons = false,
 				show_close_icon = false,
-			},
-		},
+			})
+			-- In "thin" mode bufferline draws the divider with the BufferLineSeparator
+			-- group (ui.lua:344), which has no fg on the transparent theme and so falls
+			-- back to Normal.fg (light grey). Pin it to a dark theme tone so the gap
+			-- between tabs stays dark.
+			local ok, colors = pcall(function()
+				return require("solarized-osaka.colors").setup()
+			end)
+			if ok then
+				opts.highlights = vim.tbl_deep_extend("force", opts.highlights or {}, {
+					separator = { fg = colors.base02, bg = "NONE" },
+					separator_selected = { fg = colors.base02, bg = "NONE" },
+					separator_visible = { fg = colors.base02, bg = "NONE" },
+				})
+			end
+			return opts
+		end,
 	},
 
 	-- filename
