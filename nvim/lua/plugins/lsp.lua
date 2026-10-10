@@ -105,7 +105,8 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		opts = function()
-			local keys = require("lazyvim.plugins.lsp.keymaps")
+			-- LazyVim reads LSP keymaps from _keys, not the module table itself.
+			local keys = require("lazyvim.plugins.lsp.keymaps")._keys
 			vim.list_extend(keys, {
 				{
 					"gd",
