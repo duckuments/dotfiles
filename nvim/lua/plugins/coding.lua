@@ -1,4 +1,15 @@
 return {
+	-- Format rust via the rustfmt binary (deterministic, no rust-analyzer
+	-- workspace dependency). conform takes priority over LSP formatting.
+	{
+		"stevearc/conform.nvim",
+		opts = {
+			formatters_by_ft = {
+				rust = { "rustfmt" },
+			},
+		},
+	},
+
 	-- Incremental rename
 	{
 		"smjonas/inc-rename.nvim",
