@@ -1,0 +1,18 @@
+{
+  "version": 3,
+  "layout_fingerprint": "3216af9f3e4eb334238d018565d7f440910cd57d9a6a3138d5b61a7fccb64169",
+  "workspaces": [
+    {
+      "tabs": [
+        {
+          "panes": {
+            "7": {
+              "ansi": "\u001b[0m\u001b[38;5;0m\u001b[48;5;4m ~ \u001b[0m\u001b[38;5;4m \u001b[0m",
+              "lines": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
