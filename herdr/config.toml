@@ -1,7 +1,7 @@
 onboarding = false
 
 [theme]
-name = "solarized"
+name = "vesper"
 
 auto_switch = false
 [ui]
@@ -75,6 +75,14 @@ command = '''herdr pane list | jq -r --arg t "$HERDR_ACTIVE_TAB_ID" --arg p "$HE
 key = "prefix+g"
 type = "pane"
 command = 'cd "$HERDR_ACTIVE_PANE_CWD" && lazygit'
+
+# Pick a file/dir via fzf popup, paste its path into the current command line
+[[keys.command]]
+key = "prefix+f"
+type = "popup"
+command = 'cd "$HERDR_ACTIVE_PANE_CWD" && f=$(fzf) && herdr pane send-text "$HERDR_ACTIVE_PANE_ID" "$f"'
+width = "80%"
+height = "80%"
 
 # tmux-pain-control: pane resizing
 [[keys.command]]
