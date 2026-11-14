@@ -14,7 +14,6 @@ require("mason-tool-installer").setup({
 		"oxfmt",
 		"tailwindcss-language-server",
 		"vtsls",
-		"copilot-language-server",
 		"rust-analyzer",
 	},
 	auto_update = false,
